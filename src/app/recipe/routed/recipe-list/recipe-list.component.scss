@@ -3,6 +3,5 @@
   min-height: calc(100vh - 64px);
   background-color: #fafafa;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
 }

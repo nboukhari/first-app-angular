@@ -1,4 +1,5 @@
-<div class="recipe-container">
-
-<app-recipe-detail *ngFor="let recipe of recipes" [recipe]="recipe"></app-recipe-detail>
-</div>
+<div @explainerAnim class="recipe-container" *ngIf="recipes">
+  <div class="col" *ngFor="let recipe of recipes">
+    <app-recipe-detail [recipe]="recipe" (myEventEmitter)="myEventEmitter($event)"></app-recipe-detail>
+  </div>
+<div>

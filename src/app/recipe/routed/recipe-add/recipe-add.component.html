@@ -1,0 +1,19 @@
+<form method="post" action="#" (submit)="newRecipe()">
+
+  <mat-form-field>
+    <input matInput name="name" placeholder="Name" value="" [(ngModel)]="recipe.name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="description" placeholder="Description" value="" [(ngModel)]="recipe.description">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput name="picture" placeholder="Picture" value="" [(ngModel)]="recipe.picture">
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="showRecipe()">test</button>
+  <button mat-raised-button color="primary" type="submit">submit</button>
+
+</form>
+<!-- {{recipe.name}} -->

@@ -1,0 +1,18 @@
+<form [formGroup]="recipeForm" *ngIf="recipe">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput name="name" placeholder="Name" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="description" placeholder="Description" formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput name="picture" placeholder="Picture" formControlName="picture">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="getRecipeToUpdate()">test</button>
+    <button mat-raised-button color="primary" type="submit">submit</button>
+  </div>
+</form>

@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../../../models/recipe.model';
+import { ActivatedRoute } from '@angular/router';
+import { RecipeService } from '../../shared/recipe.service';
 
 
 @Component({
@@ -13,7 +15,12 @@ recipe: Recipe;
 displayIngredient = false;
 displayInstruction = false;
 
-  constructor() { }
+@Output()
+myEventEmitter: EventEmitter<Recipe>;
+
+  constructor(private route: ActivatedRoute, private _recipeService: RecipeService) {
+    this.myEventEmitter = new EventEmitter();
+   }
 
   ngOnInit() {
     console.log('ngOnInit', this.recipe);
@@ -27,6 +34,11 @@ displayInstruction = false;
   showInstructions() {
     console.log('test', this.displayInstruction);
     this.displayInstruction = !this.displayInstruction;
+  }
+
+  removeRecipe() {
+    console.log('Recipe', this.recipe);
+   return this._recipeService.deleteRecipe(this.recipe).subscribe(() => this.myEventEmitter.emit(this.recipe));
   }
 
 }

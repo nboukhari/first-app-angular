@@ -11,7 +11,6 @@ import { RecipeService } from '../../shared/recipe.service';
   styleUrls: ['./recipe-overview.component.scss']
 })
 export class RecipeOverviewComponent implements OnInit {
-  // this.route.snapshot.paramMap.get('id')
   id: string;
 
   @Input()
@@ -20,9 +19,9 @@ export class RecipeOverviewComponent implements OnInit {
   constructor(private route: ActivatedRoute, private _recipeService: RecipeService) {
     this.id = this.route.snapshot.paramMap.get('id');
     console.log('id', this.id);
-    this._recipeService.getRecipe(this.id).subscribe(recipe => this.recipe = recipe);
+   this._recipeService.getRecipe(this.id).subscribe(recipe => this.recipe = recipe);
   }
   ngOnInit() {
-   this._recipeService.getRecipe(this.id).subscribe(recipe => this.recipe = recipe);
+   // this._recipeService.getRecipe(this.id).subscribe(recipe => this.recipe = recipe);
   }
 }

@@ -31,5 +31,7 @@
       </button>
       <button mat-raised-button color="primary" (click)="showInstructions()">Instructions</button>
     </mat-card-actions>
+    <button mat-raised-button color="primary" (click)="removeRecipe()" type="submit">Supprimer la recette</button>
+    <a href="" routerLink="/recipes/update/{{ recipe.id }}">Modifier</a>
   </mat-card>
 
